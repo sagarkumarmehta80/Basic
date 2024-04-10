@@ -1,0 +1,263 @@
+/* Reset Css */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Reset Css */
+:root{
+  --redTheme:rgb(237, 49, 85);
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+}
+img{
+  width: 100%;
+  height: auto;
+}
+.flex{
+  display: flex;
+}
+header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #000;
+  box-shadow: 1px 1px 4px 1px #000;
+}
+ header .logo_wrap{
+  max-width: 200px;
+ }
+.menu_icon_wrap{
+  display: none;
+  max-width: 40px;
+  cursor: pointer;
+}
+header .menu_wrap{
+  color: #fff;
+}
+.menu_wrap li{
+  padding: 0 15px;
+}
+.menu_wrap li:last-child{
+  padding: 0;
+}
+.submenu_wrap{
+  display: none;
+  position: absolute;
+  top: 0;
+  padding-top: 25px;
+  width: max-content;
+}
+.nestedMenu{
+  position: relative;
+
+}
+.nestedMenu::after{
+content: "\276E";
+position: absolute;
+right: 6px;
+top: calc(50% - 2.5px);
+height: 5px;
+width: 5px;
+transform: rotate(270deg);
+font-size: 12px;
+
+}
+.nestedMenu:hover > .submenu_wrap{
+  display: block;
+}
+
+.banner{
+  background: url("./banner.png") no-repeat;
+  background-size: cover;
+  height: 350px;
+}
+.content{
+  margin: 50px 0 150px;
+  padding: 0 20px
+}
+.txt{
+  line-height: 23px;
+}
+.boldTxt{
+  font-weight: bold;
+}
+.centerTxt{
+  text-align: center;
+}
+.icon_wrap{
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px 0 100px;
+}
+.icon_wrap img{
+  max-width: 60px;
+}
+.features_wrap{
+  max-width: 800px;
+  margin: 50px auto 0;
+}
+.features_wrap .feature{
+  gap: 50px;
+  align-items: center;
+}
+.features_wrap .feature:first-child{
+margin-bottom: 50px;
+}
+.features_wrap .feature .txt{
+  max-width: 400px;
+  line-height: 30px;
+}
+.features_wrap .feature:nth-child(even){
+  flex-direction: row-reverse;
+}
+.tab_wrap{
+  margin: 50px auto 150px;
+  max-width: 600px;
+  padding: 0 20px;
+}
+.tab_wrap .tab_btn{
+padding: 10px 30px;
+font-size: 32px;
+background: rgb(201, 201, 201);
+cursor: pointer;
+}
+.tab_wrap .tab_btn.active{
+background: var(--redTheme);
+color: #fff;
+pointer-events: none;
+}
+
+.tab_wrap .content_wrap{
+  padding: 40px;
+  box-shadow: 1px 1px 7px 1px #d9d9d9;
+}
+.tab_wrap .content_wrap div{
+  display: none;
+}
+.tab_wrap .content_wrap div.active{
+display: block;
+}
+footer{
+  background: #000;
+  text-align: center;
+  padding: 30px 20px 50px;
+}
+
+footer button{
+  background: var(--redTheme);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  padding: 10px 50px;
+  cursor: pointer;
+}
+footer ul{
+  color: #fff;
+  gap: 40px;
+  justify-content: center;
+  text-transform: capitalize;
+  margin: 30px auto;
+}
+footer ul li{
+  padding-right: 20px;
+  border-right: 1px solid #fff;
+}
+footer ul li:last-child{
+  padding: 0;
+  border: none;
+}
+footer img{
+  max-width: 200px;
+}
+@media(max-width:700px){
+  .features_wrap .feature,.features_wrap .feature:nth-child(even){
+    flex-direction: column;
+    text-align: center;
+  }
+  .feature .img_wrap{
+    max-width: 200px;
+  }
+  footer ul{
+    flex-direction: column;
+    gap: 20px;
+  }
+  footer ul li{
+    padding: 0;
+    border: none;
+  }
+  .menu_icon_wrap{
+    display: block;
+  }
+  header .menu_wrap{
+    position: absolute;
+    right: 0;
+    top: 72px;
+    background: #000;
+    padding: 20px;
+    height: 100vh;
+    display: none;
+  }
+  .menu_wrap .main_menu{
+    flex-direction: column;
+  }
+  .menu_wrap li,.menu_wrap li:last-child{
+    padding: 5px 0;
+  }
+  .nestedMenu::after{
+    display: none;
+  }
+  .submenu_wrap{
+    display: block;
+    position: static;
+    padding: 15px 0 6px 15px;
+  }
+}
